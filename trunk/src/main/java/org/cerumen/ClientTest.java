@@ -7,14 +7,15 @@ import java.awt.Point;
 import java.lang.reflect.Method;
 import java.util.concurrent.Future;
 
+import jrox.jabsorb.client.xmpp.XMPPSessionFactory;
+import jrox.jabsorb.serializer.impl.PointSerializer;
+
 import org.jabsorb.client.Session;
 import org.jabsorb.client.TransportRegistry;
 import org.jabsorb.client.async.AsyncClient;
 import org.jabsorb.client.async.AsyncProxy;
 import org.jabsorb.client.async.AsyncResultCallback;
 import org.jabsorb.client.async.AsyncSessionUtil;
-import org.jabsorb.client.xmpp.XMPPSessionFactory;
-import org.jabsorb.serializer.impl.PointSerializer;
 
 /**
  * @author matthijs
