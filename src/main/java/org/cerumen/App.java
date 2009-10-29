@@ -4,9 +4,10 @@ import java.awt.BorderLayout;
 
 import javax.swing.JFrame;
 
+import jrox.ServerConnection;
+import jrox.jabsorb.serializer.impl.PointSerializer;
+
 import org.jabsorb.JSONRPCBridge;
-import org.jabsorb.JSONRPCXMPPConnection;
-import org.jabsorb.serializer.impl.PointSerializer;
 import org.jivesoftware.smack.Roster.SubscriptionMode;
 
 /**
@@ -34,7 +35,7 @@ public class App extends JFrame {
 		JSONRPCBridge.getGlobalBridge().getSerializer().registerSerializer(new PointSerializer());
 		JSONRPCBridge.getGlobalBridge().registerObject("level", level);
 
-		final JSONRPCXMPPConnection connection = new JSONRPCXMPPConnection(args[1]);
+		final ServerConnection connection = new ServerConnection(args[1]);
 		connection.getXmppConnection().getRoster().setSubscriptionMode(SubscriptionMode.accept_all);
 
     	new App(level);
